@@ -1,0 +1,55 @@
+<?xml version = "1.0"?>
+<project name="Tiny Demo" default="info" basedir="/home/cs322/Documents/java_code/tiny">
+	
+	<target name="info">
+
+	<echo>This ant script builds the builds/cleans the project.</echo>
+
+    </target>
+
+    <target name="build-grammar">
+		<echo>Generating the .java files</echo>
+		
+		<java classname="org.antlr.v4.Tool">	
+			<arg value="-o" />
+			<arg value="lexparse" />	
+			<arg value="tiny.g4" />
+
+			<classpath>
+				<pathelement location="/usr/local/lib/jar/antlr-4.9.2-complete.jar" />
+			</classpath>
+
+		</java>
+
+	</target>
+
+	<target name="compile-grammar">
+		<echo>Compiling the ANTLR .java source files</echo>
+		<javac includeantruntime="false" classpath="/usr/local/lib/jar/antlr-4.9.2-complete.jar" srcdir="lexparse" destdir="." />
+	</target>
+
+
+    	<target name="clean-grammar">
+		<echo>Cleaning the lexparse directory</echo>
+		<delete>
+			<fileset dir="lexparse" includes="**/*.class"/>
+			<fileset dir="lexparse" includes="**/*.java"/>
+			<fileset dir="lexparse" includes="**/*.interp"/>
+			<fileset dir="lexparse" includes="**/*.tokens"/>
+		</delete>
+
+	</target>
+
+	<target name="compile">
+		<echo>Compiling the ANTLR .java source files</echo>
+		<javac includeantruntime="false" classpath="/usr/local/lib/jar/antlr-4.9.2-complete.jar" srcdir="tinycompiler" destdir="." />
+	</target>
+
+	<target name="clean">
+		<echo>Cleaning the my code directories</echo>
+		<delete>
+			<fileset dir="compiler" includes="**/*.class"/>
+		</delete>
+	</target>
+
+</project>
