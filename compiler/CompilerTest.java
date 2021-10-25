@@ -22,19 +22,32 @@ public class CompilerTest{
         CommonTokenStream tokens;
         tinyParser parser;
 
+	System.out.println("Compiler executing. . . ");
+
         try{
             input = CharStreams.fromFileName(args[0]);  //get the input
             lexer = new tinyLexer(input); //create the lexer
             tokens = new CommonTokenStream(lexer); //create the token stream
             parser = new tinyParser(tokens); //create the parser
+
+	    //adding custom error listener
+	    //parser.removeErrorListeners();
+
+	    //parser.addErrorListener(new VerboseListener());
+
        
             ParseTree tree = parser.program();  //set the start location of the parser
              
+            System.out.println(tree.toStringTree(parser));
             
-            Trees.inspect(tree, parser);
+           // Trees.inspect(tree, parser);
             
-            //System.out.println(tree.toStringTree(parser));
         
+	    //ParseTreeWalker walker = new ParseTreeWalker();
+	    //walker.walk(new myListener(), tree);
+	    
+
+
         }
         catch(IOException e){
             System.out.println(e.getMessage());

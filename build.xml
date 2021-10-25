@@ -42,7 +42,7 @@
 
 	<target name="compile">
 		<echo>Compiling the ANTLR .java source files</echo>
-		<javac includeantruntime="false" classpath="/usr/local/lib/jar/antlr-4.9.2-complete.jar" srcdir="tinycompiler" destdir="." />
+		<javac includeantruntime="false" classpath="/usr/local/lib/jar/antlr-4.9.2-complete.jar" srcdir="compiler" destdir="." />
 	</target>
 
 	<target name="clean">
