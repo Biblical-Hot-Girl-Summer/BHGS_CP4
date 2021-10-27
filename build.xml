@@ -12,7 +12,8 @@
 		
 		<java classname="org.antlr.v4.Tool">	
 			<arg value="-o" />
-			<arg value="lexparse" />	
+			<arg value="lexparse" />
+			<arg value="-visitor" />	
 			<arg value="tiny.g4" />
 
 			<classpath>

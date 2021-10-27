@@ -38,15 +38,16 @@ public class CompilerTest{
        
             ParseTree tree = parser.program();  //set the start location of the parser
              
-            System.out.println(tree.toStringTree(parser));
+           // System.out.println(tree.toStringTree(parser));
             
-           // Trees.inspect(tree, parser);
+           //Trees.inspect(tree, parser);
             
         
 	    //ParseTreeWalker walker = new ParseTreeWalker();
 	    //walker.walk(new myListener(), tree);
 	    
-
+	   myVisitor visitor = new myVisitor();
+	   visitor.visit(tree);
 
         }
         catch(IOException e){
