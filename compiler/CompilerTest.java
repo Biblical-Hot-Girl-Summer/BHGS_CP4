@@ -47,7 +47,7 @@ public class CompilerTest{
            //Trees.inspect(tree, parser);
             
         
-		myListener listener = new myListener("HelloWorld");
+		myListener listener = new myListener("Output", false);
 	    ParseTreeWalker walker = new ParseTreeWalker();
 	    walker.walk(listener, tree);
 	    

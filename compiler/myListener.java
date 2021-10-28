@@ -1,5 +1,6 @@
 package compiler;
 
+import org.antlr.v4.runtime.ParserRuleContext; // need to debug every rule
 import lexparse.*; //classes for lexer parser
 import org.objectweb.asm.*;  //classes for generating bytecode
 import org.objectweb.asm.Opcodes; //Explicit import for ASM bytecode constants
@@ -10,10 +11,12 @@ public class myListener extends tinyBaseListener{
 	private ClassWriter cw; 
 	private MethodVisitor mainVisitor;
 	private String programName; 
+	private boolean debug;
 
-	public myListener(String programName){
+	public myListener(String programName, boolean debug){
 	       
 		this.programName = programName;
+		this.debug = debug;
 
 	}//end constructor
 
@@ -68,29 +71,28 @@ public class myListener extends tinyBaseListener{
 
 	}
 
-	public void exitInteger(tinyParser.IntegerContext ctx){
-
-		System.out.println(ctx.getText());
-
-	}	
-
-
-	public void exitExpr(tinyParser.ExprContext ctx){
-
-		System.out.println(ctx.getText());
+	/**
+	 * Prints context string. Used for debugging purposes
+	 * @param ctx
+	 */
+	private void printContext(String ctx){
+		System.out.println(ctx);
 	}
 
-	@Override public void enterExpr_list(tinyParser.Expr_listContext ctx) { System.out.println(ctx.getText());}
+	@Override public void enterEveryRule(ParserRuleContext ctx) { if(debug) printContext(ctx.getText()); }
 
 	@Override
 	public void enterWrite_stmt(tinyParser.Write_stmtContext ctx){
 
-		String output = ctx.getText();
+		String output = ctx.getChild(1).getText();
+		//output = output.substring(5,output.length());
 		mainVisitor.visitFieldInsn(Opcodes.GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
 		mainVisitor.visitLdcInsn(output);
 		mainVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "java/io/PrintStream",  "println", "(Ljava/lang/String;)V", false);
 
 	}//end enterWrite_stmt
+
+	@Override public void exitWrite_stmt(tinyParser.Write_stmtContext ctx) { }
 
 }//end class
 
