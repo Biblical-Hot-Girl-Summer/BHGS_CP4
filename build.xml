@@ -1,6 +1,10 @@
 <?xml version = "1.0"?>
 <project name="Tiny Demo" default="info" basedir="/home/cs322/Documents/java_code/tiny">
 	
+	<path id="build.classpath">
+		<fileset dir="/usr/local/lib/jar" includes="/*.jar" />
+	</path>
+	
 	<target name="info">
 
 	<echo>This ant script builds the builds/cleans the project.</echo>
@@ -43,7 +47,7 @@
 
 	<target name="compile">
 		<echo>Compiling the ANTLR .java source files</echo>
-		<javac includeantruntime="false" classpath="/usr/local/lib/jar/antlr-4.9.2-complete.jar" srcdir="compiler" destdir="." />
+		<javac includeantruntime="false" classpath=".;/usr/local/lib/jar/asm-9.2.jar;/usr/local/lib/jar/antlr-4.9.2-complete.jar" srcdir="compiler" destdir="." />
 	</target>
 
 	<target name="clean">

@@ -47,11 +47,12 @@ public class CompilerTest{
            //Trees.inspect(tree, parser);
             
         
-	    //ParseTreeWalker walker = new ParseTreeWalker();
-	    //walker.walk(new myListener(), tree);
+		myListener listener = new myListener("HelloWorld");
+	    ParseTreeWalker walker = new ParseTreeWalker();
+	    walker.walk(listener, tree);
 	    
-	   myVisitor visitor = new myVisitor();
-	   visitor.visit(tree);
+	  // myVisitor visitor = new myVisitor();
+	  // visitor.visit(tree);
 
         }
         catch(IOException e){
