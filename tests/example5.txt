@@ -2,7 +2,6 @@ BEGIN
 
 WRITE Inigo
 WRITE Montoya
-WRITE The
 WRITE Princess
 WRITE Bride
 

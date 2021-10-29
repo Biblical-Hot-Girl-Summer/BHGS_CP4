@@ -8,10 +8,10 @@ import org.objectweb.asm.Opcodes; //Explicit import for ASM bytecode constants
 
 public class myListener extends tinyBaseListener{
 
-	private ClassWriter cw; 
-	private MethodVisitor mainVisitor;
-	private String programName; 
-	private boolean debug;
+	private ClassWriter cw;  //class level ClassWriter 
+	private MethodVisitor mainVisitor; //class level MethodVisitor
+	private String programName; //name of the class and the output file (used by ASM)
+	private boolean debug; //flag to indicate debug status
 
 	public myListener(String programName, boolean debug){
 	       
