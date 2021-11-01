@@ -79,7 +79,10 @@ public class myListener extends tinyBaseListener{
 		System.out.println(ctx);
 	}
 
-	@Override public void enterEveryRule(ParserRuleContext ctx) { if(debug) printContext(ctx.getText()); }
+	@Override 
+	public void enterEveryRule(ParserRuleContext ctx){ 
+		if(debug) printContext(ctx.getText());
+	}
 
 	@Override
 	public void enterWrite_stmt(tinyParser.Write_stmtContext ctx){
