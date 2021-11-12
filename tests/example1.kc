@@ -1,0 +1,5 @@
+PROGRAM example1
+DECLARE
+BEGIN
+PRINT "Hello World"
+END

@@ -2,29 +2,23 @@ package compiler;
 
 import lexparse.*;
 
-public class myVisitor extends tinyBaseVisitor{
+public class myVisitor extends KnightCodeBaseVisitor{
 
 	@Override
-	public Object visitStmt(tinyParser.StmtContext ctx){ 
+	public Object visitPrint(KnightCodeParser.PrintContext ctx){ 
 
 		System.out.println("Statement context: " + ctx.getText());
 
-		return super.visitStmt(ctx); 
+		return super.visitPrint(ctx); 
 
 	}	
 
-	@Override
-	public Object visitWrite_stmt(tinyParser.Write_stmtContext ctx){ 
+	/*@Override
+	public Object exitPrint(KnightCodeParser.PrintContext ctx){ 
 
 		System.out.println("Write statement context: " + ctx.getText());
 		return super.visitWrite_stmt(ctx); 
 
-	}
+	}*/
 
 }//end class
-
-
-
-
-
-

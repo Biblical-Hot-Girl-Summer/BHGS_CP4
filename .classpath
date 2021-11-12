@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="/usr/local/lib/jar/antlr-4.9.2-complete.jar"/>
+	<classpathentry kind="lib" path="/usr/local/lib/jar/asm-9.2.jar"/>
+	<classpathentry kind="lib" path="/usr/local/lib/jar/asm-util-9.2.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
