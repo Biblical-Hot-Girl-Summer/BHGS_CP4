@@ -30,8 +30,7 @@ public class kcc{
 	String output;
 	if(args.length == 2) {
 		file = args[0];
-		output = args[1];
-		
+		output = args[1];	
 	} 
 	else if(args.length == 1) {
 		file = args[0];
