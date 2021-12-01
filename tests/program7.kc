@@ -1,0 +1,14 @@
+PROGRAM program5
+DECLARE
+	INTEGER x
+	INTEGER y
+	INTEGER z
+
+BEGIN
+	SET x := 20
+	SET y := 47
+	
+	SET z := x + y
+	
+PRINT Z
+END

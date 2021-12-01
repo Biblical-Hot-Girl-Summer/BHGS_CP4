@@ -1,0 +1,10 @@
+PROGRAM program5
+DECLARE
+	INTEGER x
+	
+BEGIN
+	PRINT "Enter a number"
+	READ x
+	PRINT x
+
+END

@@ -1,8 +1,0 @@
-BEGIN 
-
-WRITE Inigo
-WRITE Montoya
-WRITE Princess
-WRITE Bride
-
-END

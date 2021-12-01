@@ -1,0 +1,18 @@
+PROGRAM program5
+DECLARE
+	INTEGER x
+	INTEGER y
+
+BEGIN
+
+	SET x := 3
+	SET y := 7
+	
+	IF x>y
+	THEN
+		PRINT "x is greater"
+	Else
+		PRINT "y is greater"
+	ENDIF
+
+END

@@ -1,4 +1,4 @@
-PROGRAM example1
+PROGRAM program5
 DECLARE
 BEGIN
 PRINT "Hello World"
